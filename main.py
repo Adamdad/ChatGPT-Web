@@ -34,10 +34,8 @@ STREAM_FLAG = True  # 是否开启流式推送
 USER_DICT_FILE = "all_user_dict_v2.pkl"  # 用户信息存储文件（包含版本）
 lock = threading.Lock()  # 用于线程锁
 
-project_info = "## ChatGPT 网页版    \n" \
-               " Code From  " \
-               "[ChatGPT-Web](https://github.com/LiangYang666/ChatGPT-Web)  \n" \
-               "发送`帮助`可获取帮助  \n"
+project_info = "## Lushair Chat Robot 网页版    \n" \
+               " 我们竭诚为您提供最好的皮肤科医疗咨询 "
 
 
 def get_response_from_ChatGPT_API(message_context, apikey):
@@ -311,6 +309,7 @@ def new_chat_dict(user_id, name, send_time):
                                  {"role": "system", "content": f"当前对话的用户id为{user_id}"},
                                  {"role": "system", "content": send_time},
                                  {"role": "system", "content": f"你已添加了{name}，现在可以开始聊天了。"},
+                                 {"role": "user", "content": "从现在开始，一直假装你是一个皮肤科医生，我们会为你提问一些问题。如果所提出的问题与皮肤病或者脱发无关，请拒绝回复，并回复“该问题与皮肤病无关，作为皮肤科医生，我无法回答该问题。”。如有关，请认真回答，并在回答开始加上“Lushair皮肤医生为您解答：”。"},
                                  ]}
 
 
