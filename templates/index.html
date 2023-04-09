@@ -85,6 +85,18 @@
             overflow-y: scroll;
             flex: 1;
         }
+        .g-container {
+            width: 240px;
+            height: 25px;
+            border-radius: 25px;
+            background: #eee;
+        }
+        .g-progress {
+            width: 50%;
+            height: inherit;
+            border-radius: 25px 0 0 25px;
+            background: #0f0;
+        }
         /* 设置滚动条的样式 */
         .content::-webkit-scrollbar {
             width:10px;
@@ -619,7 +631,7 @@
         $("#textarea").val("");
         $(".content").scrollTop($(".content")[0].scrollHeight);
         if(text.startsWith('new:')) send_time_str = get_time_str(send_time)
-        let chat_item = $('<div class="item item-left"><div class="avatar"><img src="./static/lushair.png" /></div><div class="bubble bubble-left markdown">正在等待回复</div></div>')
+        let chat_item = $('<div class="item item-left"><div class="avatar"><img src="./static/lushair.png" /></div><div class="bubble bubble-left markdown">正在等待回复<div class="g-container"><div class="g-progress"></div></div></div></div>')
         $(".content").append(chat_item);
         $(".content").scrollTop($(".content")[0].scrollHeight);
         let get_times = 0;

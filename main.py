@@ -121,6 +121,7 @@ def handle_messages_get_response(message, apikey, message_history, have_chat_con
     :param have_chat_context: 已发送消息数量上下文(从重置为连续对话开始)
     :param chat_with_history: 是否连续对话
     """
+    message_history.append({"role": "user", "content": "从现在开始, 一直假装你是一个皮肤科医生, 我们会为你提问一些问题, 如果所提出的问题与皮肤病或者脱发无关, 请拒绝回复，并回复“该问题与皮肤病无关, 作为皮肤科医生, 我无法回答该问题。”。如有关, 请认真回答, 并在回答开始加上“Lushair皮肤医生为您解答”。"})
     message_history.append({"role": "user", "content": message})
     message_context = get_message_context(message_history, have_chat_context, chat_with_history)
     response = get_response_from_ChatGPT_API(message_context, apikey)
@@ -303,7 +304,7 @@ def load_chats():
 
 def new_chat_dict(user_id, name, send_time):
     return {"chat_with_history": True,
-            "have_chat_context": 0,  # 从每次重置聊天模式后开始重置一次之后累计
+            "have_chat_context": 1,  # 从每次重置聊天模式后开始重置一次之后累计
             "name": name,
             "messages_history": [{"role": "assistant", "content": project_info},
                                  {"role": "system", "content": f"当前对话的用户id为{user_id}"},
