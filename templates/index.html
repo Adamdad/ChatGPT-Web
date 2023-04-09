@@ -724,7 +724,7 @@
             last_time = send_time.getTime();
             send_time_str = get_time_str(send_time);
         }
-        html += '<div class="item item-right"><div class="bubble bubble-right markdown">' + marked.marked(text) + '</div><div class="avatar"><img src="./static/user.png /></div></div>';
+        html += '<div class="item item-right"><div class="bubble bubble-right markdown">' + marked.marked(text) + '</div><div class="avatar"><img src="./static/user.png" /></div></div>';
         $(".content").append(html);
         $("#textarea").val("");
         $(".content").scrollTop($(".content")[0].scrollHeight);
