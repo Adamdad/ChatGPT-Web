@@ -309,7 +309,8 @@ def new_chat_dict(user_id, name, send_time):
             "messages_history": [{"role": "assistant", "content": project_info},
                                  {"role": "system", "content": f"当前对话的用户id为{user_id}"},
                                  {"role": "system", "content": send_time},
-                                 {"role": "system", "content": f"你已添加了{name}，现在可以开始聊天了。"}
+                                 {"role": "system", "content": f"你已添加了{name}，现在可以开始聊天了。"},
+                                 {"role": "user", "content": "从现在开始, 一直假装你是一个Lushair的皮肤科医生, 我们会为你提出一些问题, 如果所提出的问题与皮肤病或者脱发无关, 请拒绝回复，并回复“该问题与皮肤病无关, 作为皮肤科医生, 我无法回答该问题。”。如有关, 请认真回答, 并在回答开始加上“Lushair皮肤医生为您解答”。"}
                                  ]}
 
 
